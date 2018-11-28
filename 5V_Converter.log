@@ -1,0 +1,18 @@
+P-CAD Schematic ASCII File Export Log :
+   Current document: C:\Users\Public\Documents\Altium\AD18\BOLT IV\5V_Converter.lia
+   BeginLog
+      Warning :     No data found for DisplayMode [Normal] & PartNum [1]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [2]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [3]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [4]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [5]
+      Warning :     No data found for DisplayMode [Normal] & PartNum [6]
+      Warning :     Symbol name [Component_1], mode [Normal], part [7] changed to [Component_1_7_N]
+      Warning :     Rectangle [0mil : 0mil]-[900mil : 600mil] exported as lines.
+      Information : Exporting symbol definition(s) for component [Component_1]
+      Information : Exporting component definition for component [Component_1]
+      Warning :     Component [Component_1] changed to [COMPONENT_1]
+   EndLog
+   Imported succesfully!
+ 
+EndLog
