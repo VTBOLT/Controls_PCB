@@ -106,23 +106,6 @@ GenerateClassCluster=0
 DocumentUniqueId=YBUMLHOO
 
 [Document5]
-DocumentPath=..\..\..\..\..\David Spivey\Documents\Fall 2018\BOLT Fall 2018\Microcontroller Files\MSP-EXP432E401Y_Hardware_Design_Files\Hardware\Cad Source Files\MCU023_MSP-EXP432E401Y.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=AXERXMMJ
-
-[Document6]
 DocumentPath=Schematic.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -139,7 +122,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JIYXYRST
 
-[Document7]
+[Document6]
 DocumentPath=PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
