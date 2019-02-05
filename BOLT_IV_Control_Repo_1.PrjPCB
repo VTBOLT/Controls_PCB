@@ -55,6 +55,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document2]
+DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Schematic.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OQRIXDCW
+
+[Document3]
 DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -70,23 +87,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SJAXIIMI
-
-[Document3]
-DocumentPath=Schematic.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=2
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JIYXYRST
 
 [Document4]
 DocumentPath=5V_Converter.SchLib
@@ -393,6 +393,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QIDDFQOC
+
+[Document22]
+DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\ACS712\ACS712.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=KUKFMMPV
 
 [Configuration1]
 Name=Sources
