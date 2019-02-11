@@ -1,0 +1,578 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD18\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/11/2019</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:45:39 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc" class="file"><acronym title="C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc">C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">82</td></tr>
+</table>
+</td>
+</table><a name="IDUIMJDPNA4RZDOSZZJENIJ0HYVE2KPFKHGW3K4LGLXOUBJJYRBVBN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR2HWU0QS4RSTPPVW5O3K30DISNRQM4BMQVBXRLGQ5CDZLB5QYG5H">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSRDMHNO0XX4WP3DEVMYXD3TTWNVH3IC1CN4LEBEWMKYIIU5KVUN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHXEJ0BYN3PQPMM101H1KQ0CBD21I2A4AEB1RZJRAE2SEBKH3WVL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5PG1OZ41CWW2CRVPVITF1OINAEU0GPUA5TS3JLEGCBXJQXKSSEC">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZTQC4EB0YTXKIK3XKPQNAJCI3DMA0RZKI5DUVGN0AL5JEMDOJWHN">Width Constraint (Min=10mil) (Max=80mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID45EU20D1FES1KWEZO4KOUSCGGCHEOCQ4G1SMIVI04JJPOFAK2JBO">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIIGXGREYT3NSAR15QQI4MFDSE045PN32PKVSRIBHZZ02QN1U0YG">Hole Size Constraint (Min=1mil) (Max=150mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVOBZYW2OWDORH0PLFJLABLVQGBGU5ONDSYSVDSJEBBBE33TWXPWB">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1OWDLUSYUYWCBZKIVA2SOVDD4C5ZW3GGKNHDCYN2P4BK5TXAZRZD">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLVES5B301C43I4W5Q0KSEIWMTN333M14ACZGAKDLE4D2FCSUTU2I">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOEIQUF4JNO4LJ3DUA4TPED3IVKBBIZTANDXPMNPVOAABW2WWLZ0I">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRKCDYRTGERHNMZG41JWTJP1YU3I2XXT4HRLHZPQA2DK2133RYAH">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDALMUGOXB35KNJ1KWAQASNFU4RBEWOGIYDCAAYPB0B1AAYO4HTFWE">Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic'))</a></td>
+<td class="column2">82</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYGI2F1BAZVU0JTFAQA0MKPWZAN2ZCYQH3AXFSZD4C2V4P1E2C1SE">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">82</td>
+</tr>
+</table><br><a name="IDALMUGOXB35KNJ1KWAQASNFU4RBEWOGIYDCAAYPB0B1AAYO4HTFWE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24158.72mil|Location1.Y=0mil|Location2.Y=83885.652mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24158.72mil|Location1.Y=0mil|Location2.Y=83885.652mil|Absolute=True">Room Definition: Between Component 5V Converter-5V CONVERTER (1893.938mil,5986.893mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25793.577mil|Location1.Y=0mil|Location2.Y=79071.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25793.577mil|Location1.Y=0mil|Location2.Y=79071.898mil|Absolute=True">Room Definition: Between Component J2-SWITCHES-Header 10 (3528.218mil,1362.11mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24857.194mil|Location1.Y=0mil|Location2.Y=77961.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24857.194mil|Location1.Y=0mil|Location2.Y=77961.87mil|Absolute=True">Room Definition: Between Component J3-BMS-Header 6 (2929.035mil,476.57mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25788.197mil|Location1.Y=0mil|Location2.Y=80393.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25788.197mil|Location1.Y=0mil|Location2.Y=80393.774mil|Absolute=True">Room Definition: Between Component J4-PUMP-Header 2 (3522.52mil,2880.837mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23347.974mil|Location1.Y=0mil|Location2.Y=77958.28mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23347.974mil|Location1.Y=0mil|Location2.Y=77958.28mil|Absolute=True">Room Definition: Between Component J6-MC2-Header 6 (1419.815mil,472.98mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25790.289mil|Location1.Y=0mil|Location2.Y=79860.344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25790.289mil|Location1.Y=0mil|Location2.Y=79860.344mil|Absolute=True">Room Definition: Between Component J7-LED-Header 12 (3669.93mil,2145.556mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24499.246mil|Location1.Y=0mil|Location2.Y=77961.86mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24499.246mil|Location1.Y=0mil|Location2.Y=77961.86mil|Absolute=True">Room Definition: Between Component J8-DASH-Header 6 (2571.086mil,476.561mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22342.333mil|Location1.Y=0mil|Location2.Y=79672.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22342.333mil|Location1.Y=0mil|Location2.Y=79672.779mil|Absolute=True">Room Definition: Between Component J9-CAN-Header 10 (492.913mil,1962.992mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24983.278mil|Location1.Y=0mil|Location2.Y=84370.726mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24983.278mil|Location1.Y=0mil|Location2.Y=84370.726mil|Absolute=True">Room Definition: Between Component K1-Relays (2604.331mil,6631.41mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24154.876mil|Location1.Y=0mil|Location2.Y=79988.464mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24154.876mil|Location1.Y=0mil|Location2.Y=79988.464mil|Absolute=True">Room Definition: Between Component K2-Relays (2291.676mil,2406.63mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24157.517mil|Location1.Y=0mil|Location2.Y=79417.106mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24157.517mil|Location1.Y=0mil|Location2.Y=79417.106mil|Absolute=True">Room Definition: Between Component K3-Relays (1778.57mil,1677.79mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22794.354mil|Location1.Y=0mil|Location2.Y=77946.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22794.354mil|Location1.Y=0mil|Location2.Y=77946.814mil|Absolute=True">Room Definition: Between Component K4-Relays (931.155mil,364.98mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22480.535mil|Location1.Y=0mil|Location2.Y=81997.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22480.535mil|Location1.Y=0mil|Location2.Y=81997.819mil|Absolute=True">Room Definition: Between Component LDO1-MCP1702T-3302E/M (626.974mil,4493.638mil) on Signal And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22820.831mil|Location1.Y=0mil|Location2.Y=80695.261mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22820.831mil|Location1.Y=0mil|Location2.Y=80695.261mil|Absolute=True">Room Definition: Between Component LDO2-MCP1702T-3302E/M (967.27mil,3191.08mil) on Signal And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23078.914mil|Location1.Y=0mil|Location2.Y=84513.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23078.914mil|Location1.Y=0mil|Location2.Y=84513.536mil|Absolute=True">Room Definition: Between Component S1-Component_2 (1260.4mil,6538.591mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22335.629mil|Location1.Y=0mil|Location2.Y=78699.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22335.629mil|Location1.Y=0mil|Location2.Y=78699.37mil|Absolute=True">Room Definition: Between DIP Component J10-IMU-Header 4 (486.21mil,1186.433mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23560.158mil|Location1.Y=0mil|Location2.Y=81229.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23560.158mil|Location1.Y=0mil|Location2.Y=81229.09mil|Absolute=True">Room Definition: Between DIP Component J11-XBEE-Header 10X2A (671.42mil,3365.09mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25500.994mil|Location1.Y=0mil|Location2.Y=84425.965mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25500.994mil|Location1.Y=0mil|Location2.Y=84425.965mil|Absolute=True">Room Definition: Between DIP Component J1-BAT-Header 4 (3622.047mil,6526.378mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24135.45mil|Location1.Y=0mil|Location2.Y=77961.36mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24135.45mil|Location1.Y=0mil|Location2.Y=77961.36mil|Absolute=True">Room Definition: Between DIP Component J5-MC1-Header 4 (2256.503mil,477.95mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22986.447mil|Location1.Y=0mil|Location2.Y=82305.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22986.447mil|Location1.Y=0mil|Location2.Y=82305.803mil|Absolute=True">Room Definition: Between DIP Component JA-Header 10X2A (1150mil,4250mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24686.447mil|Location1.Y=0mil|Location2.Y=82305.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24686.447mil|Location1.Y=0mil|Location2.Y=82305.803mil|Absolute=True">Room Definition: Between DIP Component JB-Header 10X2A (2850mil,4250mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22986.447mil|Location1.Y=0mil|Location2.Y=79805.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22986.447mil|Location1.Y=0mil|Location2.Y=79805.803mil|Absolute=True">Room Definition: Between DIP Component JC-Header 10X2A (1150mil,1750mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24686.447mil|Location1.Y=0mil|Location2.Y=79805.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24686.447mil|Location1.Y=0mil|Location2.Y=79805.803mil|Absolute=True">Room Definition: Between DIP Component JD-Header 10X2A (2850mil,1750mil) on 12V And Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22979.144mil|Location1.Y=0mil|Location2.Y=83917.81mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22979.144mil|Location1.Y=0mil|Location2.Y=83917.81mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SIP Component 12V-Component_3 (496.063mil,6420.62mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23940.798mil|Location1.Y=0mil|Location2.Y=83087.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23940.798mil|Location1.Y=0mil|Location2.Y=83087.896mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component ADJ+-ERJ-8ENF20R0V (2096.3mil,5659.4mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23517.798mil|Location1.Y=0mil|Location2.Y=83087.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23517.798mil|Location1.Y=0mil|Location2.Y=83087.896mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component ADJ--ERJ-8ENF20R0V (1673.3mil,5659.4mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22457.4mil|Location1.Y=0mil|Location2.Y=82142.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22457.4mil|Location1.Y=0mil|Location2.Y=82142.782mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C10-TPSE476K035R0200 (685.674mil,4707.538mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22740.344mil|Location1.Y=0mil|Location2.Y=80754.986mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22740.344mil|Location1.Y=0mil|Location2.Y=80754.986mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C11-TPSE476K035R0200 (939.09mil,3349.27mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22758.354mil|Location1.Y=0mil|Location2.Y=80833.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22758.354mil|Location1.Y=0mil|Location2.Y=80833.287mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C12-TPSE476K035R0200 (957.1mil,3427.57mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24736.574mil|Location1.Y=0mil|Location2.Y=80473.996mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24736.574mil|Location1.Y=0mil|Location2.Y=80473.996mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C13-TPSE476K035R0200 (2935.32mil,3068.28mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25018.964mil|Location1.Y=0mil|Location2.Y=81143.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25018.964mil|Location1.Y=0mil|Location2.Y=81143.796mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C14-Cap (3217.71mil,3738.08mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22798.38mil|Location1.Y=0mil|Location2.Y=80953.61mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22798.38mil|Location1.Y=0mil|Location2.Y=80953.61mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C15-Cap (958.37mil,3519.11mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22763.664mil|Location1.Y=0mil|Location2.Y=81018.587mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22763.664mil|Location1.Y=0mil|Location2.Y=81018.587mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C16-Cap (962.41mil,3612.87mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22766.244mil|Location1.Y=0mil|Location2.Y=81116.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22766.244mil|Location1.Y=0mil|Location2.Y=81116.876mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C17-Cap (964.99mil,3711.16mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23823.884mil|Location1.Y=0mil|Location2.Y=84359.7mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23823.884mil|Location1.Y=0mil|Location2.Y=84359.7mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C1-TPSE476K035R0200 (1881.374mil,6874.2mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23823.881mil|Location1.Y=0mil|Location2.Y=84146.6mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23823.881mil|Location1.Y=0mil|Location2.Y=84146.6mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C2-TPSE476K035R0200 (1881.371mil,6661.1mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23549.91mil|Location1.Y=0mil|Location2.Y=82780.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23549.91mil|Location1.Y=0mil|Location2.Y=82780.5mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C3-TPSE476K035R0200 (1698.4mil,5204mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24035.81mil|Location1.Y=0mil|Location2.Y=82781.8mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24035.81mil|Location1.Y=0mil|Location2.Y=82781.8mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C4-TPSE476K035R0200 (2184.3mil,5205.3mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22352.41mil|Location1.Y=0mil|Location2.Y=84355.7mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22352.41mil|Location1.Y=0mil|Location2.Y=84355.7mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C5-TPSE476K035R0200 (409.9mil,6870.2mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22349.71mil|Location1.Y=0mil|Location2.Y=84139.4mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22349.71mil|Location1.Y=0mil|Location2.Y=84139.4mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C6-TPSE476K035R0200 (407.2mil,6653.9mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22225.21mil|Location1.Y=0mil|Location2.Y=82488.7mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22225.21mil|Location1.Y=0mil|Location2.Y=82488.7mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C7-TPSE476K035R0200 (282.7mil,5003.2mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22691.01mil|Location1.Y=0mil|Location2.Y=82492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22691.01mil|Location1.Y=0mil|Location2.Y=82492mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C8-TPSE476K035R0200 (748.5mil,5006.5mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22398.101mil|Location1.Y=0mil|Location2.Y=82142.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22398.101mil|Location1.Y=0mil|Location2.Y=82142.343mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component C9-TPSE476K035R0200 (626.374mil,4707.099mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24688.601mil|Location1.Y=0mil|Location2.Y=84268.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24688.601mil|Location1.Y=0mil|Location2.Y=84268.926mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D1-S1M-13-F (2868.11mil,6754.926mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23854.14mil|Location1.Y=0mil|Location2.Y=79882.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23854.14mil|Location1.Y=0mil|Location2.Y=79882.279mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D2-S1M-13-F (2033.65mil,2325.24mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23859.4mil|Location1.Y=0mil|Location2.Y=79294.13mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23859.4mil|Location1.Y=0mil|Location2.Y=79294.13mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D3-S1M-13-F (2038.91mil,1780.13mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22495.21mil|Location1.Y=0mil|Location2.Y=77798.789mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22495.21mil|Location1.Y=0mil|Location2.Y=77798.789mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D4-S1M-13-F (674.72mil,241.75mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23834.57mil|Location1.Y=0mil|Location2.Y=78392.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23834.57mil|Location1.Y=0mil|Location2.Y=78392.74mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D5-DZ2J033M0L (1994.56mil,969.24mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24931.88mil|Location1.Y=0mil|Location2.Y=81067.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24931.88mil|Location1.Y=0mil|Location2.Y=81067.126mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D6-Diode (2978.13mil,3598.48mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23306.101mil|Location1.Y=0mil|Location2.Y=78910.757mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23306.101mil|Location1.Y=0mil|Location2.Y=78910.757mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D7-Diode (1421.17mil,1308.19mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25197.881mil|Location1.Y=0mil|Location2.Y=80465.527mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25197.881mil|Location1.Y=0mil|Location2.Y=80465.527mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component D8-Diode (3312.95mil,2862.96mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23797.61mil|Location1.Y=0mil|Location2.Y=77897.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23797.61mil|Location1.Y=0mil|Location2.Y=77897.16mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F10-100 mA (2015.6mil,457.66mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23299.19mil|Location1.Y=0mil|Location2.Y=78178.49mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23299.19mil|Location1.Y=0mil|Location2.Y=78178.49mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F11-100 mA (1517.18mil,738.99mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23224.01mil|Location1.Y=0mil|Location2.Y=77673.23mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23224.01mil|Location1.Y=0mil|Location2.Y=77673.23mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F12-100 mA (1392.5mil,257.23mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25231.057mil|Location1.Y=0mil|Location2.Y=84259.335mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25231.057mil|Location1.Y=0mil|Location2.Y=84259.335mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F1-3413.0330.22 (3372.047mil,6822.835mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23216.41mil|Location1.Y=0mil|Location2.Y=82839.1mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23216.41mil|Location1.Y=0mil|Location2.Y=82839.1mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F2-3413.0330.22 (1413.9mil,5346.1mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22858.81mil|Location1.Y=0mil|Location2.Y=82727.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22858.81mil|Location1.Y=0mil|Location2.Y=82727.5mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F3-3413.0330.22 (1056.3mil,5234.5mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24696.22mil|Location1.Y=0mil|Location2.Y=78201.42mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24696.22mil|Location1.Y=0mil|Location2.Y=78201.42mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F4-100 mA (2914.21mil,761.92mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24815.52mil|Location1.Y=0mil|Location2.Y=78254.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24815.52mil|Location1.Y=0mil|Location2.Y=78254.11mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F5-1 A (3020.01mil,774.11mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24589.04mil|Location1.Y=0mil|Location2.Y=78188.72mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24589.04mil|Location1.Y=0mil|Location2.Y=78188.72mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F6-100 mA (2807.03mil,749.22mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23542.43mil|Location1.Y=0mil|Location2.Y=78739.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23542.43mil|Location1.Y=0mil|Location2.Y=78739.48mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F7-100 mA (1760.42mil,1299.98mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23848.067mil|Location1.Y=0mil|Location2.Y=78037.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23848.067mil|Location1.Y=0mil|Location2.Y=78037.174mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F8-100 mA (2016.557mil,621.174mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24451.22mil|Location1.Y=0mil|Location2.Y=77673.67mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24451.22mil|Location1.Y=0mil|Location2.Y=77673.67mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component F9-100 mA (2645.71mil,257.67mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24291.273mil|Location1.Y=0mil|Location2.Y=79630.207mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24291.273mil|Location1.Y=0mil|Location2.Y=79630.207mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component Q1-NMOS-2 (2483.19mil,2171.34mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24288.663mil|Location1.Y=0mil|Location2.Y=79362.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24288.663mil|Location1.Y=0mil|Location2.Y=79362.877mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component Q2-NMOS-2 (2480.58mil,1904.01mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23840.771mil|Location1.Y=0mil|Location2.Y=78273.103mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23840.771mil|Location1.Y=0mil|Location2.Y=78273.103mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component Q3-NMOS-2 (2021.8mil,826.11mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24111.396mil|Location1.Y=0mil|Location2.Y=78756.492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24111.396mil|Location1.Y=0mil|Location2.Y=78756.492mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component Q4-PMOS-2 (2300.3mil,1307.65mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24690.928mil|Location1.Y=0mil|Location2.Y=78371.986mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24690.928mil|Location1.Y=0mil|Location2.Y=78371.986mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R10-ERJ-8ENF20R0V (2846.43mil,943.49mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23824.899mil|Location1.Y=0mil|Location2.Y=78800.076mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=23824.899mil|Location1.Y=0mil|Location2.Y=78800.076mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R11-ERJ-8ENF20R0V (1980.4mil,1371.58mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24650.776mil|Location1.Y=0mil|Location2.Y=80738.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24650.776mil|Location1.Y=0mil|Location2.Y=80738.548mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R12-ERJ-8ENF20R0V (2856.27mil,3260.06mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25030.468mil|Location1.Y=0mil|Location2.Y=80755.386mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25030.468mil|Location1.Y=0mil|Location2.Y=80755.386mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R13-ERJ-8ENF20R0V (3185.97mil,3326.89mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25377.516mil|Location1.Y=0mil|Location2.Y=82286.258mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=25377.516mil|Location1.Y=0mil|Location2.Y=82286.258mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R14-ERJ-8ENF20R0V (3583.01mil,4807.77mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24289.386mil|Location1.Y=0mil|Location2.Y=84351.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24289.386mil|Location1.Y=0mil|Location2.Y=84351.724mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R1-ERJ-S14F71R5U (2446.85mil,6905.512mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24269.791mil|Location1.Y=0mil|Location2.Y=84191.093mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24269.791mil|Location1.Y=0mil|Location2.Y=84191.093mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R2-ERJ-S14F71R5U (2382.284mil,6714.567mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22187.814mil|Location1.Y=0mil|Location2.Y=82920.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22187.814mil|Location1.Y=0mil|Location2.Y=82920.712mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R3-ERJ-14NF1821U (345.278mil,5474.5mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24429.576mil|Location1.Y=0mil|Location2.Y=79672.768mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24429.576mil|Location1.Y=0mil|Location2.Y=79672.768mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R4-NTC0805J10K (2635.07mil,2194.28mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24436.676mil|Location1.Y=0mil|Location2.Y=79269.387mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24436.676mil|Location1.Y=0mil|Location2.Y=79269.387mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R5-NTC0805J10K (2642.17mil,1790.9mil) on Signal </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22878.296mil|Location1.Y=0mil|Location2.Y=83649.238mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22878.296mil|Location1.Y=0mil|Location2.Y=83649.238mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R6-ERJ-8ENF20R0V (1083.79mil,6170.75mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22991.768mil|Location1.Y=0mil|Location2.Y=83302.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=22991.768mil|Location1.Y=0mil|Location2.Y=83302.976mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R7-ERJ-2BSFR10X (1147.27mil,5874.48mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24354.446mil|Location1.Y=0mil|Location2.Y=78333.057mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24354.446mil|Location1.Y=0mil|Location2.Y=78333.057mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R8-ERJ-8ENF20R0V (2559.94mil,854.57mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24690.928mil|Location1.Y=0mil|Location2.Y=78474.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24690.928mil|Location1.Y=0mil|Location2.Y=78474.876mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SMT Small Component R9-ERJ-8ENF20R0V (2846.43mil,1046.38mil) on 12V </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24726.449mil|Location1.Y=0mil|Location2.Y=80369.595mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\David Spivey\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Real PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=24726.449mil|Location1.Y=0mil|Location2.Y=80369.595mil|Absolute=True">Room Definition: Between Room Schematic (Bounding Region = (0mil, 0mil, 2000mil, 1000mil) (InComponentClass('Schematic')) And SOIC Component CH1-Header 4X2A (2878.01mil,2836.91mil) on 12V </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

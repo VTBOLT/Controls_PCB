@@ -1,0 +1,29 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: Real PCB.GBR   2/11/2019  9:34:36 AM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTO                Top Overlay                             
+.GTS                Top Solder                              
+.GTL                12V                                     
+.G1                 GND                                     
+.G2                 5V                                      
+.GBL                Signal                                  
+.GBS                Bottom Solder                           
+.GBO                Bottom Overlay                          
+.GM1                Mechanical 1                            
+.GM2                Mechanical 2                            
+.GM3                Mechanical 3                            
+.GM4                Mechanical 4                            
+.GM5                Mechanical 5                            
+.GM6                Mechanical 6                            
+.GM10               Mechanical 10                           
+.GM12               Mechanical 12                           
+.GM13               Mechanical 13                           
+.GM15               Mechanical 15                           
+.GM16               Mechanical 16                           
+.GKO                Keep-Out Layer                          
+------------------------------------------------------------------------------------------
