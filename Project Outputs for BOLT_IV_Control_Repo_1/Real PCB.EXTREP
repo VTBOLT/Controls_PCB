@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: Real PCB.GBR   2/11/2019  9:34:36 AM
+Gerber File Extension Report For: Real PCB.GBR   2/13/2019  11:38:40 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -25,5 +25,8 @@ Layer Extension     Layer Description
 .GM13               Mechanical 13                           
 .GM15               Mechanical 15                           
 .GM16               Mechanical 16                           
+.GM17               Mechanical 17                           
+.GM18               Mechanical 18                           
+.GM19               Mechanical 19                           
 .GKO                Keep-Out Layer                          
 ------------------------------------------------------------------------------------------
