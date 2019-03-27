@@ -2,135 +2,44 @@
 FileName = Real PCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 18
-      File : Real PCB.GM18
+Generating : Top Overlay
+      File : Real PCB.GTO
 
-    Adding Layer      : Mechanical 18
+    Adding Layer      : Top Overlay
 
 
 Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
     D16
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 13
-      File : Real PCB.GM13
+Generating : Signal
+      File : Real PCB.GBL
 
-    Adding Layer      : Mechanical 13
-
-
-Used DCodes :
-    D97
-    D98
-    D99
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 6
-      File : Real PCB.GM6
-
-    Adding Layer      : Mechanical 6
-
-
-Used DCodes :
-    D95
-    D96
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 3
-      File : Real PCB.GM3
-
-    Adding Layer      : Mechanical 3
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 2
-      File : Real PCB.GM2
-
-    Adding Layer      : Mechanical 2
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : Real PCB.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D10
-    D12
-    D15
-    D95
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : Real PCB.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Real PCB.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-    D12
-    D13
-    D72
-    D93
-    D94
-*************************************************************
-
-*************************************************************
-Generating : 12V
-      File : Real PCB.GTL
-
-    Adding Layer      : 12V
+    Adding Layer      : Signal
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D11
     D12
-    D15
+    D13
     D17
-    D25
-    D26
-    D27
     D28
     D29
-    D31
-    D32
-    D46
     D47
-    D48
-    D49
-    D50
     D51
-    D52
-    D53
-    D54
     D55
     D56
     D57
     D58
-    D59
     D60
     D61
     D62
@@ -143,6 +52,23 @@ Used DCodes :
     D69
     D70
     D71
+    D72
+    D73
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
 *************************************************************
 
 *************************************************************
@@ -157,21 +83,22 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 16
-      File : Real PCB.GM16
+Generating : Mechanical 15
+      File : Real PCB.GM15
 
-    Adding Layer      : Mechanical 16
+    Adding Layer      : Mechanical 15
 
 
 Used DCodes :
-    D100
+    D13
+    D102
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 10
-      File : Real PCB.GM10
+Generating : Mechanical 12
+      File : Real PCB.GM12
 
-    Adding Layer      : Mechanical 10
+    Adding Layer      : Mechanical 12
 
 
 Used DCodes :
@@ -218,6 +145,7 @@ Used DCodes :
     D43
     D44
     D45
+    D46
 *************************************************************
 
 *************************************************************
@@ -241,56 +169,18 @@ Generating : GND
 
 Used DCodes :
     D12
-    D57
     D58
     D59
     D60
     D61
+    D62
     D63
-    D64
     D65
     D66
+    D67
     D68
-    D71
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : Real PCB.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-*************************************************************
-
-*************************************************************
-Generating : 5V
-      File : Real PCB.G2
-
-    Adding Layer      : 5V
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D54
-    D58
-    D59
-    D60
-    D63
-    D69
     D70
-    D71
-    D72
+    D73
 *************************************************************
 
 *************************************************************
@@ -305,25 +195,15 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 15
-      File : Real PCB.GM15
+Generating : Mechanical 6
+      File : Real PCB.GM6
 
-    Adding Layer      : Mechanical 15
-
-
-Used DCodes :
-    D13
-    D100
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 12
-      File : Real PCB.GM12
-
-    Adding Layer      : Mechanical 12
+    Adding Layer      : Mechanical 6
 
 
 Used DCodes :
+    D97
+    D98
 *************************************************************
 
 *************************************************************
@@ -335,6 +215,150 @@ Generating : Mechanical 4
 
 Used DCodes :
     D14
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 3
+      File : Real PCB.GM3
+
+    Adding Layer      : Mechanical 3
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 2
+      File : Real PCB.GM2
+
+    Adding Layer      : Mechanical 2
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Real PCB.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+    D12
+    D15
+    D97
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Real PCB.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Real PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D12
+    D13
+    D74
+    D95
+    D96
+*************************************************************
+
+*************************************************************
+Generating : 12V
+      File : Real PCB.GTL
+
+    Adding Layer      : 12V
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D15
+    D17
+    D25
+    D26
+    D27
+    D28
+    D29
+    D31
+    D32
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 18
+      File : Real PCB.GM18
+
+    Adding Layer      : Mechanical 18
+
+
+Used DCodes :
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 16
+      File : Real PCB.GM16
+
+    Adding Layer      : Mechanical 16
+
+
+Used DCodes :
+    D102
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Real PCB.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D99
+    D100
+    D101
 *************************************************************
 
 *************************************************************
@@ -367,68 +391,50 @@ Used DCodes :
     D43
     D44
     D45
-    D74
-    D75
+    D46
+    D76
     D77
     D79
-    D80
     D81
-    D88
-    D89
+    D82
+    D83
     D90
     D91
     D92
+    D93
+    D94
 *************************************************************
 
 *************************************************************
-Generating : Signal
-      File : Real PCB.GBL
+Generating : Mechanical 10
+      File : Real PCB.GM10
 
-    Adding Layer      : Signal
+    Adding Layer      : Mechanical 10
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : 5V
+      File : Real PCB.G2
+
+    Adding Layer      : 5V
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D11
     D12
-    D13
-    D17
-    D28
-    D29
-    D46
-    D50
-    D54
     D55
-    D56
-    D57
     D59
     D60
     D61
     D62
-    D63
-    D64
     D65
-    D66
-    D67
-    D68
-    D69
-    D70
     D71
+    D72
     D73
     D74
-    D75
-    D76
-    D77
-    D78
-    D79
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
 *************************************************************
 
