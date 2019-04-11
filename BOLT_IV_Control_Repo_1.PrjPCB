@@ -55,23 +55,6 @@ GenerateClassCluster=0
 DocumentUniqueId=SJAXIIMI
 
 [Document2]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\AltiumDesigner.LibPkg
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document3]
 DocumentPath=Schematic.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -88,7 +71,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OQRIXDCW
 
-[Document4]
+[Document3]
 DocumentPath=5V_Converter.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -105,7 +88,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JQPICBFL
 
-[Document5]
+[Document4]
 DocumentPath=12V_Converter.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -122,7 +105,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PSGSLFJD
 
-[Document6]
+[Document5]
 DocumentPath=12V_Converter.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -139,24 +122,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=WCAIXSSB
 
-[Document7]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\5V_Converter.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=AXPCVBFM
-
-[Document8]
+[Document6]
 DocumentPath=Relays.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -173,7 +139,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PHHLDTSO
 
-[Document9]
+[Document7]
 DocumentPath=Relays.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -190,331 +156,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=WFQNLXKI
 
-[Document10]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Relay Diodes.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=VTWIIKMI
-
-[Document11]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Relay Diodes.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=HXXXKKEV
-
-[Document12]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\SW1\SW1.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=EBYVUKNB
-
-[Document13]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\REV DIODES\REV DIODES.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=EHHSPVUU
-
-[Document14]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\DMN13H750S N-Channel\DMN13H750S.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JMQARENI
-
-[Document15]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\NVR1P02T1G\NVR1P02T1G.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=LHNGERRR
-
-[Document16]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\Headers\Xbee.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=KHSLHEMP
-
-[Document17]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\LEDs\1206 LED.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=LMFEBOPD
-
-[Document18]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\REAL 5V CON\5V CONVERTER.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=TARKJEVD
-
-[Document19]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\0603 Cap\0603 Cap.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=FLYHXDBW
-
-[Document20]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\RUC002n05hzgt116\RUC002n05hzgt116.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=MEUFUGSK
-
-[Document21]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\SPST Switch\SPST Switch.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=QIDDFQOC
-
-[Document22]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\ACS712\ACS712.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=KUKFMMPV
-
-[Document23]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\2-pin\2-PIN_MOLEX.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document24]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\1206 Resistors\AltiumDesigner\1206 Resistors.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document25]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\COMPARATOR1\AltiumDesigner\2019-02-07_03-13-39\Comparator.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document26]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\COMPARATOR1\AltiumDesigner\2019-02-07_03-13-39\Comparator.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=KEFBIIUO
-
-[Document27]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\XBEE\XBEE.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RLAAWEXW
-
-[Document28]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\1206 Capacitor\1206 Cap.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document29]
-DocumentPath=..\..\Documents\Fall 2018\BOLT Fall 2018\AltiumDesigner\BOLT_IV_Control_Repo_1.OutJob
+[Document8]
+DocumentPath=ON Semi Small Signal Switching Diodes.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -535,118 +178,122 @@ DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Design Rule Check - Real
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.DRR
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Design Rule Check - Relay PCB.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.EXTREP
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.G1
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.G2
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.G1
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBL
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.G2
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBO
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBS
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GKO
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM1
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM2
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM3
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM4
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM5
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM4
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM6
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM5
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM10
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM6
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM12
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM10
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM13
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM12
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM15
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM16
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM17
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM16
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM18
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM17
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM19
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM18
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTL
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GM19
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTO
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTS
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.LDP
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.REP
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.RUL
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.REP
 DItemRevisionGUID=
 
 [GeneratedDocument30]
+DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument31]
 DocumentPath=Project Outputs for BOLT_IV_Control_Repo_1\Real PCB.TXT
 DItemRevisionGUID=
 
@@ -1268,6 +915,11 @@ OutputName6=Footprint Comparison Report
 OutputDocumentPath6=
 OutputVariantName6=
 OutputDefault6=0
+OutputType7=BOM_Violations
+OutputName7=BOM Checks Report
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
 
 [OutputGroup9]
 Name=Export Outputs
@@ -1448,6 +1100,7 @@ Type113=1
 Type114=1
 Type115=1
 Type116=1
+Type117=1
 
 [Difference Levels]
 Type1=1
@@ -1515,6 +1168,7 @@ Type62=1
 Type63=1
 Type64=1
 Type65=1
+Type66=1
 
 [Electrical Rules Check]
 Type1=1
@@ -1683,6 +1337,162 @@ NetClassSeparateForBusSections=0
 SelectedOnly=0
 UpdateVariants=1
 PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=0805 Resistors.SchLib
+ComponentDesignItemID0=NTC0805J10K
+ComponentSymbolReference0=NTC0805J10K
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=1206 Resistors.SchLib
+ComponentDesignItemID1=ERJ-8ENF20R0V
+ComponentSymbolReference1=ERJ-8ENF20R0V
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=1210 Resistors.SchLib
+ComponentDesignItemID2=ERJ-14NF1821U
+ComponentSymbolReference2=ERJ-14NF1821U
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=12V_Converter.SchLib
+ComponentDesignItemID3=Component_3
+ComponentSymbolReference3=Component_3
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=3413.0330.22.SchLib
+ComponentDesignItemID4=3413.0330.22
+ComponentSymbolReference4=3413.0330.22
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=5V CONVERTER.SchLib
+ComponentDesignItemID5=5V CONVERTER
+ComponentSymbolReference5=5V CONVERTER
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=AltiumDesigner.SchLib
+ComponentDesignItemID6=3413.0330.22
+ComponentSymbolReference6=3413.0330.22
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=CIN.SchLib
+ComponentDesignItemID7=TPSE476K035R0200
+ComponentSymbolReference7=TPSE476K035R0200
+ComponentUpdate7=1
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=LDO.SchLib
+ComponentDesignItemID8=MCP1702T-3302E/M
+ComponentSymbolReference8=MCP1702T-3302E/M
+ComponentUpdate8=1
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Library Name And Type
+ComponentLibraryIdentifier9=Miscellaneous Connectors.IntLib
+ComponentDesignItemID9=Header 10
+ComponentSymbolReference9=Header 10
+ComponentUpdate9=1
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Library Name And Type
+ComponentLibraryIdentifier10=Miscellaneous Connectors.IntLib
+ComponentDesignItemID10=Header 10X2A
+ComponentSymbolReference10=Header 10X2A
+ComponentUpdate10=1
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Library Name And Type
+ComponentLibraryIdentifier11=Miscellaneous Connectors.IntLib
+ComponentDesignItemID11=Header 12
+ComponentSymbolReference11=Header 12
+ComponentUpdate11=1
+ComponentIsDeviceSheet11=0
+ComponentLibIdentifierKind12=Library Name And Type
+ComponentLibraryIdentifier12=Miscellaneous Connectors.IntLib
+ComponentDesignItemID12=Header 2
+ComponentSymbolReference12=Header 2
+ComponentUpdate12=1
+ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=Miscellaneous Connectors.IntLib
+ComponentDesignItemID13=Header 4
+ComponentSymbolReference13=Header 4
+ComponentUpdate13=1
+ComponentIsDeviceSheet13=0
+ComponentLibIdentifierKind14=Library Name And Type
+ComponentLibraryIdentifier14=Miscellaneous Connectors.IntLib
+ComponentDesignItemID14=Header 4X2A
+ComponentSymbolReference14=Header 4X2A
+ComponentUpdate14=1
+ComponentIsDeviceSheet14=0
+ComponentLibIdentifierKind15=Library Name And Type
+ComponentLibraryIdentifier15=Miscellaneous Connectors.IntLib
+ComponentDesignItemID15=Header 6
+ComponentSymbolReference15=Header 6
+ComponentUpdate15=1
+ComponentIsDeviceSheet15=0
+ComponentLibIdentifierKind16=Library Name And Type
+ComponentLibraryIdentifier16=Miscellaneous Devices.IntLib
+ComponentDesignItemID16=Cap
+ComponentSymbolReference16=Cap
+ComponentUpdate16=1
+ComponentIsDeviceSheet16=0
+ComponentLibIdentifierKind17=Library Name And Type
+ComponentLibraryIdentifier17=Miscellaneous Devices.IntLib
+ComponentDesignItemID17=Diode
+ComponentSymbolReference17=Diode
+ComponentUpdate17=1
+ComponentIsDeviceSheet17=0
+ComponentLibIdentifierKind18=Library Name And Type
+ComponentLibraryIdentifier18=Miscellaneous Devices.IntLib
+ComponentDesignItemID18=Fuse 2
+ComponentSymbolReference18=Fuse 2
+ComponentUpdate18=1
+ComponentIsDeviceSheet18=0
+ComponentLibIdentifierKind19=Library Name And Type
+ComponentLibraryIdentifier19=Miscellaneous Devices.IntLib
+ComponentDesignItemID19=NMOS-2
+ComponentSymbolReference19=NMOS-2
+ComponentUpdate19=1
+ComponentIsDeviceSheet19=0
+ComponentLibIdentifierKind20=Library Name And Type
+ComponentLibraryIdentifier20=Miscellaneous Devices.IntLib
+ComponentDesignItemID20=PMOS-2
+ComponentSymbolReference20=PMOS-2
+ComponentUpdate20=1
+ComponentIsDeviceSheet20=0
+ComponentLibIdentifierKind21=Library Name And Type
+ComponentLibraryIdentifier21=Miscellaneous Devices.IntLib
+ComponentDesignItemID21=Res1
+ComponentSymbolReference21=Res1
+ComponentUpdate21=1
+ComponentIsDeviceSheet21=0
+ComponentLibIdentifierKind22=Library Name And Type
+ComponentLibraryIdentifier22=Relay Diodes.SchLib
+ComponentDesignItemID22=S1M-13-F
+ComponentSymbolReference22=S1M-13-F
+ComponentUpdate22=1
+ComponentIsDeviceSheet22=0
+ComponentLibIdentifierKind23=Library Name And Type
+ComponentLibraryIdentifier23=Relays.SchLib
+ComponentDesignItemID23=Relays
+ComponentSymbolReference23=Relays
+ComponentUpdate23=1
+ComponentIsDeviceSheet23=0
+ComponentLibIdentifierKind24=Library Name And Type
+ComponentLibraryIdentifier24=SW2.SchLib
+ComponentDesignItemID24=Component_2
+ComponentSymbolReference24=Component_2
+ComponentUpdate24=1
+ComponentIsDeviceSheet24=0
+ComponentLibIdentifierKind25=Library Name And Type
+ComponentLibraryIdentifier25=Zeners.SchLib
+ComponentDesignItemID25=DZ2J033M0L
+ComponentSymbolReference25=DZ2J033M0L
+ComponentUpdate25=1
+ComponentIsDeviceSheet25=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1696,6 +1506,174 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
+ParameterName0=Built_By
+ParameterUpdate0=1
+ParameterName1=C
+ParameterUpdate1=1
+ParameterName2=Code_JEDEC
+ParameterUpdate2=1
+ParameterName3=Comment
+ParameterUpdate3=1
+ParameterName4=Component Kind
+ParameterUpdate4=1
+ParameterName5=ComponentLink1Description
+ParameterUpdate5=1
+ParameterName6=ComponentLink1URL
+ParameterUpdate6=1
+ParameterName7=Copyright
+ParameterUpdate7=1
+ParameterName8=DatasheetVersion
+ParameterUpdate8=1
+ParameterName9=Description
+ParameterUpdate9=1
+ParameterName10=LatestRevisionDate
+ParameterUpdate10=1
+ParameterName11=LatestRevisionNote
+ParameterUpdate11=1
+ParameterName12=Library Reference
+ParameterUpdate12=1
+ParameterName13=Manufacturer_Part_Number
+ParameterUpdate13=1
+ParameterName14=Note
+ParameterUpdate14=1
+ParameterName15=PackageDescription
+ParameterUpdate15=1
+ParameterName16=PackageReference
+ParameterUpdate16=1
+ParameterName17=PackageVersion
+ParameterUpdate17=1
+ParameterName18=Published
+ParameterUpdate18=1
+ParameterName19=Publisher
+ParameterUpdate19=1
+ParameterName20=RefDes
+ParameterUpdate20=1
+ParameterName21=Type
+ParameterUpdate21=1
+ParameterName22=Value
+ParameterUpdate22=1
+ParameterName23=Vendor
+ParameterUpdate23=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=0466Series
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=0603
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=0603 Cap
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=12_pinnn
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=12-pin
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=12V_Converter
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=2-pin
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=4-pin
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=5V_Converter
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=6-pin
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=ACS712
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=CAP_3216
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=CAP_TPS_E
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=DMN13H750S
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=FUS_SCHURTER_341
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=PCBComponent_1
+ModelUpdate15=1
+ModelType16=PCBLIB
+ModelName16=RC1206N
+ModelUpdate16=1
+ModelType17=PCBLIB
+ModelName17=RC1210N
+ModelUpdate17=1
+ModelType18=PCBLIB
+ModelName18=Relays
+ModelUpdate18=1
+ModelType19=PCBLIB
+ModelName19=REV_DIODE
+ModelUpdate19=1
+ModelType20=PCBLIB
+ModelName20=SMA
+ModelUpdate20=1
+ModelType21=PCBLIB
+ModelName21=SMC
+ModelUpdate21=1
+ModelType22=PCBLIB
+ModelName22=SMini2-F5-B
+ModelUpdate22=1
+ModelType23=PCBLIB
+ModelName23=SOT23_M
+ModelUpdate23=1
+ModelType24=PCBLIB
+ModelName24=SOT-89_3MC
+ModelUpdate24=1
+ModelType25=PCBLIB
+ModelName25=SW1
+ModelUpdate25=1
+ModelType26=PCBLIB
+ModelName26=uC_Pins
+ModelUpdate26=1
+ModelType27=PCBLIB
+ModelName27=XBEE
+ModelUpdate27=1
+ModelTypeGroup1=SI
+ModelTypeUpdate1=1
+ModelType28=SI
+ModelName28=Cap
+ModelUpdate28=1
+ModelType29=SI
+ModelName29=Connector
+ModelUpdate29=1
+ModelType30=SI
+ModelName30=Diode
+ModelUpdate30=1
+ModelType31=SI
+ModelName31=Res
+ModelUpdate31=1
+ModelTypeGroup2=SIM
+ModelTypeUpdate2=1
+ModelType32=SIM
+ModelName32=CAP
+ModelUpdate32=1
+ModelType33=SIM
+ModelName33=DIODE
+ModelUpdate33=1
+ModelType34=SIM
+ModelName34=FUSE
+ModelUpdate34=1
+ModelType35=SIM
+ModelName35=IRF1010
+ModelUpdate35=1
+ModelType36=SIM
+ModelName36=IRF9510
+ModelUpdate36=1
+ModelType37=SIM
+ModelName37=RESISTOR
+ModelUpdate37=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
